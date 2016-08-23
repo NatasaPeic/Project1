@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Example</title>
+
+
+
+      <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
+
+      <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+
+
+      <link rel="stylesheet" href="assets/styles/style.css" media="screen" title="no title" charset="utf-8">
+
+     <script type="text/javascript" src="main.js">
+
+      </script>
+    </head>
+
+    <body class="container-fluid">
+
+
+      <nav>
+           <h1>
+             TIC TAC TOE
+           </h1>
+      </nav>
+
+  <div class="forms">
+                    <form id="sign-up">
+
+                 <fieldset>
+                   <legend>SIGN UP!</legend>
+
+
+                   <input type="text" name="user[id]" placeholder="NAME" id="user-name">
+
+                   <input type="text" name="credentials[email]" placeholder="E-MAIL" id="user-email">
+
+                   <input type="password" name="credentials[password]" placeholder="PASSWORD" id="user-password">
+
+                   <input type="password" name="credentials[password_confirmation]" placeholder="CONFIRM PASSWORD" id="user-password-confirm">
+
+                   <input type="submit" id="button1" name="submit" value="SIGN UP!">
+                 </fieldset>
+               </form>
+
+<br>
+               <form id="sign-in">
+                 <fieldset>
+                   <legend>SIGN IN!</legend>
+
+                   <input type="text" name="user[id]" placeholder="NAME">
+
+                   <input type="text" name="credentials[email]" placeholder="E-MAIL">
+                   <input type="password" name="credentials[password]" placeholder="PASSWORD">
+
+                   <input type="submit" id="button2" name="submit" value="SIGN IN!">
+                 </fieldset>
+               </form>
+<br>
+
+<div id="message1">Password was changed succesfully!</div>
+<br>
+
+               <form id="change-password">
+                 <fieldset>
+                   <legend>CHANGE PASSWORD!</legend>
+
+                   <input type="text" name="user[id]" placeholder="NAME">
+
+                   <input type="password" name="passwords[old]" placeholder="OLD PASSWORD">
+                   <input type="password" name="passwords[new]" placeholder="NEW PASSWORD">
+
+                   <input type="submit" id="button3" name="submit" value="Change password!">
+                 </fieldset>
+               </form>
+               <br>
+
+
+
+               <form id="sign-out">
+                 <fieldset>
+
+                   <input type="submit"  name="submit" value="SIGN OUT">
+                 </fieldset>
+               </form>
+
+<br>
+               <form action="#" id="game-create">
+
+                   <input type="Submit"  value="CLICK TO PLAY!">
+
+
+<br>
+   <br>
+               </form>
+
+
+               <form action="#" id="game-request">
+
+                   <input type="Submit" value="SHOW MY GAMES!">
+
+               </form>
+               <br>
+                 <div id="message3"></div>
+
+
+</div>
+
+
+        <div class="container">
+          <div id="message"></div>
+
+                <main>
+                       <div class="board" data-value= "0" data-index="0" id="R1C1" >
+                       </div>
+                       <div class="board" data-value= "0" data-index="1" id="R1C2" >
+                       </div>
+                       <div class="board" data-value= "0" data-index="2" id="R1C3" >
+                       </div>
+                       <div class="board" data-value= "0" data-index="3" id="R2C1" >
+                       </div>
+                       <div class="board" data-value= "0" data-index="4" id="R2C2" >
+                       </div>
+                       <div class="board" data-value= "0" data-index="5" id="R2C3" >
+                       </div>
+                       <div class="board" data-value= "0" data-index="6" id="R3C1" >
+                       </div>
+                       <div class="board" data-value= "0" data-index="7" id="R3C2" >
+                       </div>
+                       <div class="board" data-value= "0" data-index="8" id="R3C3" >
+                       </div>
+
+                       <div class="reset">
+                         <input type="button" id="reset-button" name="name" value="CLEAR BOARD">
+                       </div>
+                </main>
+
+                    <!-- <aside >
+                      <div class="winner">
+                        <form class="winner" action="index.html" method="post">
+                          <p id="nextPlayer">
+                            Next player:
+                          </p>
+
+                          <p id=winner>
+                            Winner is:
+                          </p>
+                        </form>
+                      </div>
+                    </aside> -->
+
+        </div>
+
+
+
+
+    </body>
+</html>
