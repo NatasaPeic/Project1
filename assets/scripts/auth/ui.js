@@ -1,63 +1,19 @@
 'use strict';
 
 const app = require('../app');
+// const api = require('./api');
+// const ui = require('./ui');
+
 
 
 const onSuccess = function (data) {
-  // if (data.game) {
-  //   console.log(data.game);
-  // } else {
-  //   console.log(data.games);
-  // }
-// debugger;
-// console.log(data.game.id);
-
 
   app.game = data.game;
 
   // let games = data.game.id;
-  // debugger;
-
-  // let obj = data.game;
-  // let player = JSON.stringify(obj);
-  // console.log(player);
 
 console.log(app.game.length);
-
-
-
-// $("#game-request").on("click", function () {
-//   $("#change-password, #sign-out, #game-create, #game-request").hide();
-  // $("#message3").text(games);
-
-  // let obj = data.game.player_x;
-  // let player = JSON.stringify(obj, null, 2);
-
-
-
-
-
-
-
-  // debugger;
-
-
-
-
-  // let objNew = JSON.parse(player);
-
-  //  alert(newObj);
-  //
-  // $("#message3").text(player);
-
-
-  // $("#message3").text("You have finished" + data.game.player_x);
-  // console.log(games);
-  // debugger;
-  // console.log(data.game.player_x);
-// });
-
-
+console.log('Game is created!');
 
 };
 
@@ -72,6 +28,9 @@ const signInSuccess = (data) => {
 
   app.user = data.user;
   console.log(data);
+  console.log(data.user);
+    $("p, .board, #button_1").hide();
+    $("#play").show();
 
 
 
@@ -87,34 +46,13 @@ const signOutSuccess = () => {
 
 
 //create a new game
-
-
-
   const getSuccess = (data) => {
 
  if (data.game) {
 
-  //  console.log(data.game);
-
  } else {
    console.log(data.games);
-
-   // number of games per user
-  //  alert(data.games.length);
  }
-
-//   if (data.game) {
-//     console.log(data.game);
-//   } else {
-//     console.log(data.games);
-//   }
-//
-// app.game = data.game;
-// console.log(data.game.cells);
-
-  // app.game = data.game;
-  // // app.user = data.user
-  // console.log(data.game);
 
 
 
@@ -123,7 +61,7 @@ const signOutSuccess = () => {
   $("#reset-button").on("click", function () {
   $(" #game-request").hide();
   $("#game-create").show();
-  
+
 
   });
 
@@ -167,7 +105,7 @@ const signOutSuccess = () => {
 
 const failureSignIn = () => {
 
-     $("body.container-fluid").css("background-image" , "url(http://i.imgur.com/Q7WjLwN.png");
+    //  $("body.container-fluid").css("background-image" , "url(http://i.imgur.com/Q7WjLwN.png");
      $("#change-password, #sign-out, #game-create, #game-request, .container, footer, nav, #message1").hide();
      $("#sign-in, #sign-up").show();
 
@@ -190,7 +128,7 @@ const failureSignIn = () => {
 const failure = (error) => {
   console.error(error);
 
-  $("body.container-fluid").css("background-image" , "url(http://i.imgur.com/Q7WjLwN.png");
+  // $("body.container-fluid").css("background-image" , "url(http://i.imgur.com/Q7WjLwN.png");
   $("#change-password, #sign-out, #game-create, #game-request, .container, footer, nav, #message1").hide();
   $("#sign-in, #sign-up").show();
 

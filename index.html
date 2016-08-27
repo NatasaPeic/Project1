@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic Tac Toe</title>
 
-
+     <link rel="stylesheet" href="assets/styles/styles.css" media="screen" title="no title" charset="utf-8">
 
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
 
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
 
 
-      <link rel="stylesheet" href="assets/styles/style.css" media="screen" title="no title" charset="utf-8">
 
      <script type="text/javascript" src="main.js">
 
@@ -20,138 +19,319 @@
     <body class="container-fluid">
 
 
-      <nav>
-           <h1>
-             TIC TAC TOE
-           </h1>
+
+      <!-- <nav class="navbar navbar-default" style="margin-top: 15px;"> -->
+        <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" style="margin-bottom: 20px;">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand"><b></b></a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav navbar-left">
+
+              <li><a id="sign-up-modal-link" href="#">SIGN UP</a></li>
+
+              <li><a class="sign-in-trigger" id="sign-in-modal-link" href="#">SIGN IN</a></li>
+
+              <li><a class="change-password-trigger" id="change-password-modal-link" href="#">Change Password</a></li>
+
+              <li><a class="sign-out-trigger" id="sign-out-modal-link" href="#">Sign Out</a></li>
+
+              <!-- <li><a id="create-job-modal-link" href="#">Create job</a></li> -->
+
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
       </nav>
 
-  <div class="forms">
-                    <form id="sign-up">
+      <!--  SIGN-UP MODAL -->
+           <div class="container">
+             <div id="sign-up-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+               <div class="modal-dialog modal-sm" role="document">
+                 <div class="modal-content">
+                   <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     <h4 class="modal-title">Sign up</h4>
+                   </div>
+                   <div class="modal-body">
+                     <form id="sign-up">
+                       <fieldset>
+                         <div class="form-group">
+             <label for="exampleInputEmail1">Email address</label>
+             <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="email" name="credentials[email]" id="sign-up-email">
+             </div>
 
-                 <fieldset>
-                   <legend>SIGN UP!</legend>
+             <div class="form-group">
+             <label for="exampleInputPassword1">Password</label>
+             <input type="password" class="form-control" placeholder="password" name="credentials[password]" id="sign-up-password" >
+             </div>
 
 
-                   <input type="text" name="user[id]" placeholder="NAME" id="user-name">
+             <div class="form-group">
+             <label for="exampleInputPassword1">Confirm password</label>
+             <input type="password" class="form-control" placeholder="confirm password" name="credentials[password_confirmation]"  id="user-password-confirm" >
+             </div>
 
-                   <input type="text" name="credentials[email]" placeholder="E-MAIL" id="user-email">
+             <br>
 
-                   <input type="password" name="credentials[password]" placeholder="PASSWORD" id="user-password">
+             <div class="form-group">
+               <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#sign-in-modal" class="register-opp">Already have an account?</a>
+            </div>
+            </br>
 
-                   <input type="password" name="credentials[password_confirmation]" placeholder="CONFIRM PASSWORD" id="user-password-confirm">
 
-                   <input type="submit" id="button1" name="submit" value="SIGN UP!">
-                 </fieldset>
-               </form>
+                         <button type="submit" id="sign-up1" class="btn btn-success sign-up-submit" name="submit" >Sign Up</button>
+                       </fieldset>
+                     </form>
 
-<br>
-               <form id="sign-in">
-                 <fieldset>
-                   <legend>SIGN IN!</legend>
-
-                   <input type="text" name="user[id]" placeholder="NAME">
-
-                   <input type="text" name="credentials[email]" placeholder="E-MAIL">
-                   <input type="password" name="credentials[password]" placeholder="PASSWORD">
-
-                   <input type="submit" id="button2" name="submit" value="SIGN IN!">
-                 </fieldset>
-               </form>
-<br>
-
-<div id="message1">Password was changed succesfully!</div>
-<br>
-
-               <form id="change-password">
-                 <fieldset>
-                   <legend>CHANGE PASSWORD!</legend>
-
-                   <input type="text" name="user[id]" placeholder="NAME">
-
-                   <input type="password" name="passwords[old]" placeholder="OLD PASSWORD">
-                   <input type="password" name="passwords[new]" placeholder="NEW PASSWORD">
-
-                   <input type="submit" id="button3" name="submit" value="Change password!">
-                 </fieldset>
-               </form>
-               <br>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <!-- END SIGN-UP MODAL -->
 
 
 
-               <form id="sign-out">
-                 <fieldset>
+           <!--  SIGN-IN MODAL -->
+                <div class="container">
+                  <div id="sign-in-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                    <div class="modal-dialog modal-sm" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title">Sign In</h4>
+                        </div>
+                        <div class="modal-body">
+                          <form id="sign-in">
+                            <fieldset>
+                              <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="email" name="credentials[email]" id="sign-up-email">
+                  </div>
 
-                   <input type="submit"  name="submit" value="SIGN OUT">
-                 </fieldset>
-               </form>
+                  <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" placeholder="password" name="credentials[password]" id="sign-up-password" >
+                  </div>
 
-<br>
-               <form action="#" id="game-create">
-
-                   <input type="Submit"  value="CLICK TO PLAY!">
-
-
-<br>
-   <br>
-               </form>
-
-
-               <form action="#" id="game-request">
-
-                   <input type="Submit" value="SHOW MY GAMES!">
-
-               </form>
-               <br>
-                 <div id="message3"></div>
-
-
-</div>
-
-
-        <div class="container">
-          <div id="message"></div>
-
-                <main>
-                       <div class="board" data-value= "0" data-index="0" id="R1C1" >
-                       </div>
-                       <div class="board" data-value= "0" data-index="1" id="R1C2" >
-                       </div>
-                       <div class="board" data-value= "0" data-index="2" id="R1C3" >
-                       </div>
-                       <div class="board" data-value= "0" data-index="3" id="R2C1" >
-                       </div>
-                       <div class="board" data-value= "0" data-index="4" id="R2C2" >
-                       </div>
-                       <div class="board" data-value= "0" data-index="5" id="R2C3" >
-                       </div>
-                       <div class="board" data-value= "0" data-index="6" id="R3C1" >
-                       </div>
-                       <div class="board" data-value= "0" data-index="7" id="R3C2" >
-                       </div>
-                       <div class="board" data-value= "0" data-index="8" id="R3C3" >
-                       </div>
-
-                       <div class="reset">
-                         <input type="button" id="reset-button" name="name" value="CLEAR BOARD">
-                       </div>
-                </main>
-
-                    <!-- <aside >
-                      <div class="winner">
-                        <form class="winner" action="index.html" method="post">
-                          <p id="nextPlayer">
-                            Next player:
-                          </p>
-
-                          <p id=winner>
-                            Winner is:
-                          </p>
-                        </form>
+                              <button type="submit" id="sign-in1" class="btn btn-success sign-up-submit" name="submit" >Sign In</button>
+                            </fieldset>
+                          </form>
+                        </div>
                       </div>
-                    </aside> -->
+                    </div>
+                  </div>
+                </div>
+                <!-- END SIGN-UP MODAL -->
 
+
+                <!--  CHANGE PASSWORD MODAL -->
+                     <div class="container">
+                       <div id="change-password-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                         <div class="modal-dialog modal-sm" role="document">
+                           <div class="modal-content">
+                             <div class="modal-header">
+                               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                               <h4 class="modal-title">Change password</h4>
+                             </div>
+                             <div class="modal-body">
+                               <form id="change-password">
+                                 <fieldset>
+                                   <div class="form-group">
+
+                                        <div class="form-group">
+                                        <label for="exampleInputPassword1">Old Password</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="old password"  name="passwords[old]" >
+                                        </div>
+
+                                        <div class="form-group">
+                                        <label for="exampleInputPassword1">New Password</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="new password" name="passwords[new]">
+                                        </div>
+                                      </div>
+
+                                   <button type="submit" id="change-password1" class="btn btn-success sign-up-submit" name="submit" >Change password</button>
+                                 </fieldset>
+                               </form>
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+                     </div>
+                     <!-- END SIGN-UP MODAL -->
+
+
+
+
+                     <!--  SIGN OUT MODAL -->
+                          <div class="container">
+                            <div id="sign-out-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                              <div class="modal-dialog modal-sm" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">Are you sure you want to sign out?</h4>
+                                  </div>
+                                  <div class="modal-body">
+                                    <form id="sign-out">
+                                      <fieldset>
+                                        <div class="form-group">
+
+                                      <button type="submit" id="sign-out1" class="btn btn-success sign-up-submit" name="submit" >Sign out</button>
+                                    </div>
+
+                                      </fieldset>
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- END SIGN-OUT MODAL -->
+
+
+                          <!-- MODAL FOR WRONG PASSWORD -->
+
+                          <div class="modal fade" id="wrong-password" accesskey=""tabindex="-1" role="dialog">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                      <h4 class="modal-title"></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                      <p>Wrong email and password combination. Please try again.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" id="modalClose" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                  </div><!-- /.modal-content -->
+                                </div><!-- /.modal-dialog -->
+                              </div><!-- /.modal -->
+
+                              <!-- END MODAL FOR WRONG PASSWORD -->
+
+
+
+                              <!-- MODAL FOR TAKEN EMAIL AND/OR PASSWORD -->
+
+                              <div class="modal fade" id="taken-password" accesskey=""tabindex="-1" role="dialog">
+                                    <div class="modal-dialog" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                          <h4 class="modal-title"></h4>
+                                        </div>
+                                        <div class="modal-body">
+                                          <p>This email is already taken. Please try again.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" id="modalClose1" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                      </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                  </div><!-- /.modal -->
+
+                                  <!-- END MODAL FOR WRONG PASSWORD -->
+
+
+
+
+
+
+
+
+
+
+          <div class="history">
+
+            <p>
+              An early variant of <strong>tic-tac-toe</strong> was played in the Roman Empire, around the first century BC. It was called Terni Lapilli and instead of having any number of pieces, each player only had three, thus they had to move them around to empty spaces to keep playing. The game's grid markings have been found chalked all over Rome.
+            </p>
+
+            <p>The different names of the game are more recent . The first print reference to "noughts and crosses", the British name, appeared in 1864. In his novel "Can You Forgive Her", 1864, Anthony Trollope refers to a clerk playing <strong>"tit-tat-toe"</strong>. The first print reference to a game called "tick-tack-toe" occurred in 1884, but referred to "a children's game played on a slate, consisting in trying with the eyes shut to bring the pencil down on one of the numbers of a set, the number hit being scored". "Tic-tac-toe" may also derive from <strong>"tick-tack"</strong>, the name of an old version of backgammon first described in 1558. The U.S. renaming of Noughts and crosses as tic-tac-toe occurred in the 20th century.
+            </p>
+
+            <br>
+            <br>
+
+
+            <p id="link">
+              Resource: <a style="color:white, font-weight:bold;"href="https://en.wikipedia.org/wiki/Tic-tac-toe" target="_blank">Wikipedia</a>
+            </p>
+
+            <br>
+            <br>
+
+
+            <h3 id="button_1" style="color:white;">
+              <span style="color:black;">SIGN UP or SIGN IN</span> to start playing!
+            </h3>
+
+      </div>
+
+        <br>
+        <div>
+           <button id="play" type="button" class="btn btn-success">Click to play!</button>
         </div>
+        <br>
+
+
+        <div>
+       <button id="reset" type="button" class="btn btn-success">Reset your game!</button>
+       </div>
+        <br>
+        <br>
+
+
+         <div class="history">
+
+
+         <main>
+           <div id="message"></div>
+           <br>
+           <br>
+                <div class="board" data-value= "0" data-index="0" id="R1C1" >
+                </div>
+                <div class="board" data-value= "0" data-index="1" id="R1C2" >
+                </div>
+                <div class="board" data-value= "0" data-index="2" id="R1C3" >
+                </div>
+                <div class="board" data-value= "0" data-index="3" id="R2C1" >
+                </div>
+                <div class="board" data-value= "0" data-index="4" id="R2C2" >
+                </div>
+                <div class="board" data-value= "0" data-index="5" id="R2C3" >
+                </div>
+                <div class="board" data-value= "0" data-index="6" id="R3C1" >
+                </div>
+                <div class="board" data-value= "0" data-index="7" id="R3C2" >
+                </div>
+                <div class="board" data-value= "0" data-index="8" id="R3C3" >
+                </div>
+
+
+         </main>
+         <br>
+         <!-- <div id="message-show">
+           <p>
+             Do you want to know how many games you have played?
+           </p>
+         <button id="show" type="button" class="btn btn-success">Show my games!</button>
+         </div> -->
+         <br>
+       </div>
 
 
 

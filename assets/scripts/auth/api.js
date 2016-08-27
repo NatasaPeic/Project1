@@ -35,7 +35,6 @@ const signUp = (data) => $.ajax({
 
 const signOut = () => $.ajax({
 
-
   url: app.api + '/sign-out/' + app.user.id,
   method: 'DELETE',
   headers: {
@@ -43,19 +42,14 @@ const signOut = () => $.ajax({
   }
 });
 
-// no data passed
+
 const create = () => $.ajax({
 
     url: app.api + '/games/',
     method: 'POST',
-
-    //added headers
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
-     data: app.user,
-    //  data: '{}',
-
 });
 
 
@@ -74,11 +68,8 @@ const show = (data) => $.ajax({
 
 const update = (index, value) => $.ajax({
 
-
   method: 'PATCH',
-  // got a game.id from show a game success message
   url: app.api + '/games/' + app.game.id,
-
   headers: {
     Authorization: 'Token token=' + app.user.token,
   },
@@ -87,8 +78,7 @@ const update = (index, value) => $.ajax({
             "cell": {
            "index": index,
            "value": value,
-                        },
-
+     },
   }
 }
 
