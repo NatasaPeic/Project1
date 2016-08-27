@@ -8,7 +8,7 @@ Technologies used: HTML, CSS, JavaScript, jquery. AJAX is used for the communica
 
 # URL
 
-
+https://natasapeic.github.io/Project1/
 
 
 # Wireframe
