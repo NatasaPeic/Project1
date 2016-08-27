@@ -104,12 +104,3 @@ a:active {
 
   border-bottom: none;
 }
-
-
-@media (max-width: 1600px){
-  .board{
-    width: 100%;
-  }
-
-
-}
