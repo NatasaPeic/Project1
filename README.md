@@ -10,10 +10,6 @@ Technologies used: HTML, CSS, JavaScript, jquery. AJAX is used for the communica
 ![alt tag](http://i.imgur.com/fJbk8Kj.png)
 ![alt tag](http://i.imgur.com/XH6R6dZ.png)
 
-# Live Demo #2
-
-![alt tag](http://i.imgur.com/dHSWJhS.png)
-![alt tag](http://i.imgur.com/pNDRr3W.png)
 
 
 # Live Demo URL
