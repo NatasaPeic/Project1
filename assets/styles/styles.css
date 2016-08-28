@@ -5,10 +5,15 @@
     margin: 25%;
   }
 
+#title {
+    font-size: 25px;
+    text-decoration: underline;
+}
+
 #message1 {
-  text-align: center;
-  font-weight: bold;
-  font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
 }
 
 
@@ -16,36 +21,36 @@
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
-    margin-left: 10%;
+    margin-left: 20%;
 }
 
 #message3 {
-  font-weight: bold;
-  font-style: italic;
-  font-size: 20px;
-  width: 100%;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 20px;
+    width: 100%;
 }
 
 #message {
     font-weight: bold;
-    font-size: 25px;
-    color: white;
+    font-size: 35px;
+    color: black;
 }
 
-  .O {
+.O {
     color: #e6df99;
     font-size: 70px;
     margin: 25%;
-  }
+}
 
 .board {
-  border: 3px solid black;
-float: left;
-width: 30%;
-max-width: 150px;
-height: 110px;
-border-top: none;
-border-left: none;
+    border: 3px solid black;
+    float: left;
+    width: 30%;
+    max-width: 150px;
+    height: 110px;
+    border-top: none;
+    border-left: none;
 }
 
 p {
@@ -54,16 +59,16 @@ p {
 }
 
 .history {
-  width: 45%;
-  margin-top: 50px;
-margin-left: 40px;
-margin-right: 50px;
+    width: 90%;
+    margin-top: 50px;
+    margin-left: 3%;
+    margin-right: 5%;
 }
 
 
 div.container {
-  width: 600px;
-  margin-left: 60%;
+    width: 600px;
+    margin-left: 60%;
 }
 
 
@@ -96,11 +101,42 @@ a:active {
 }
 
 #R1C3,  #R2C3, #R3C3{
-
   border-right: none;
 }
 
 #R3C1,  #R3C2, #R3C3{
 
   border-bottom: none;
+}
+
+
+body{
+  background-image: url("http://i.imgur.com/XLHdUex.png");
+  background-repeat: no-repeat;
+}
+
+.playNow {
+  margin-left: 8%;
+}
+
+
+@media (max-width: 700px) {
+
+  .history, main {
+    width: 90%;
+    margin-left: 8%;
+    margin-right: 10%;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+
+  #reset, #play {
+    margin-left: 8%;
+  }
+
+
 }
