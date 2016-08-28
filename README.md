@@ -5,11 +5,18 @@ This is a Tic Tac Toe web application, built as a project for General Assembly's
 
 Technologies used: HTML, CSS, JavaScript, jquery. AJAX is used for the communication with the back-end.
 
+# Live Demo #1
+
 ![alt tag](http://i.imgur.com/fJbk8Kj.png)
+![alt tag](http://i.imgur.com/XH6R6dZ.png)
+
+# Live Demo #2
+
+![alt tag](http://i.imgur.com/dHSWJhS.png)
+![alt tag](http://i.imgur.com/pNDRr3W.png)
 
 
-# URL
-
+# Live Demo URL
 https://natasapeic.github.io/Project1/
 
 
