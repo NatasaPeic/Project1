@@ -5,6 +5,8 @@ This is a Tic Tac Toe web application, built as a project for General Assembly's
 
 Technologies used: HTML, CSS, JavaScript, jquery. AJAX is used for the communication with the back-end.
 
+![alt tag](http://i.imgur.com/fJbk8Kj.png)
+
 
 # URL
 
