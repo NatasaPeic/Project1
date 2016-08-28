@@ -113,6 +113,8 @@ a:active {
 body{
   background-image: url("http://i.imgur.com/XLHdUex.png");
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .playNow {
