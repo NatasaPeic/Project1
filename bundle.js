@@ -41,8 +41,9 @@ webpackJsonp([0],[
 
 	  $('#change-password-modal-link, #change-password-modal-link, #sign-out-modal-link, #sign-in-modal-link, #game-create, .board, #play, #reset, #show, #message-show').hide();
 	  $('#sign-in-modal-link').show();
-	  $("body.container-fluid").css("background-image", "url(http://i.imgur.com/pMYsKxC.jpg");
-	  $("body.container-fluid").css("background-image", "repeat: no repeat;");
+	  // $("body.container-fluid").css("background-image" , "url(http://i.imgur.com/gXstBGM.png");
+	  // $("body.container-fluid").css("background-image" , "repeat: no repeat;");
+
 	});
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
@@ -165,12 +166,8 @@ webpackJsonp([0],[
 	  $('#play').on('click', onCreateGame);
 	  $('#play').on('click', function () {
 	    $(".board").show();
+	    $('.X, .O').hide();
 	    $("#play, #button_1").hide();
-	  });
-
-	  $("#reset").on('click', function () {
-	    $(".board").hide();
-	    $("#play").show();
 	  });
 	};
 
@@ -394,7 +391,7 @@ webpackJsonp([0],[
 	  app.user = data.user;
 	  console.log(data);
 	  console.log(data.user);
-	  $("p, .board, #button_1").hide();
+	  $("p, .board, .playNow").hide();
 	  $("#play").show();
 	};
 
@@ -909,27 +906,27 @@ webpackJsonp([0],[
 	    if ($("#R" + i + "C1").text() === "X" && $("#R" + i + "C1").text() === $("#R" + i + "C2").text() && $("#R" + i + "C1").text() === $("#R" + i + "C3").text()) {
 
 	      $("#message").text("X wins!");
-	      $("#reset").show();
+	      $("#play").show();
 	      $("#R1C1, #R1C2, #R1C3, #R2C1, #R2C2, #R2C3, #R3C1, #R3C2, #R3C3").off();
 
 	      // horizontally O
 	    } else if ($("#R" + i + "C1").text() === "O" && $("#R" + i + "C1").text() === $("#R" + i + "C2").text() && $("#R" + i + "C1").text() === $("#R" + i + "C3").text()) {
 
 	      $("#message").text("O wins!");
-	      $("#reset").show();
+	      $("#play").show();
 	      $("#R1C1, #R1C2, #R1C3, #R2C1, #R2C2, #R2C3, #R3C1, #R3C2, #R3C3").off();
 
 	      // vertically X
 	    } else if ($("#R1" + "C" + i).text() === "X" && $("#R1" + "C" + i).text() === $("#R2" + "C" + i).text() && $("#R1" + "C" + i).text() === $("#R3" + "C" + i).text()) {
 
 	      $("#message").text("X wins!");
-	      $("#reset").show();
+	      $("#play").show();
 	      $("#R1C1, #R1C2, #R1C3, #R2C1, #R2C2, #R2C3, #R3C1, #R3C2, #R3C3").off();
 	    } else if ($("#R1" + "C" + i).text() === "O" && $("#R1" + "C" + i).text() === $("#R2" + "C" + i).text() && $("#R1" + "C" + i).text() === $("#R3" + "C" + i).text()) {
 
 	      // console.log("O won!");
 	      $("#message").text("O wins!");
-	      $("#reset").show();
+	      $("#play").show();
 	      $("#R1C1, #R1C2, #R1C3, #R2C1, #R2C2, #R2C3, #R3C1, #R3C2, #R3C3").off();
 	    }
 	  }
@@ -938,14 +935,14 @@ webpackJsonp([0],[
 	  if ($("#R1C1").text() === "X" && $("#R1C1").text() === $("#R2C2").text() && $("#R1C1").text() === $("#R3C3").text()) {
 
 	    $("#message").text("X wins!");
-	    $("#reset").show();
+	    $("#play").show();
 	    $("#R1C1, #R1C2, #R1C3, #R2C1, #R2C2, #R2C3, #R3C1, #R3C2, #R3C3").off();
 
 	    // diagonally O left to right
 	  } else if ($("#R1C1").text() === "O" && $("#R1C1").text() === $("#R2C2").text() && $("#R1C1").text() === $("#R3C3").text()) {
 
 	    $("#message").text("O wins!");
-	    $("#reset").show();
+	    $("#play").show();
 	    $("#R1C1, #R1C2, #R1C3, #R2C1, #R2C2, #R2C3, #R3C1, #R3C2, #R3C3").off();
 	  }
 
@@ -953,13 +950,13 @@ webpackJsonp([0],[
 	  if ($("#R1C3").text() === "X" && $("#R1C3").text() === $("#R2C2").text() && $("#R1C3").text() === $("#R3C1").text()) {
 
 	    $("#message").text("X wins!");
-	    $("#reset").show();
+	    $("#play").show();
 	    $("#R1C1, #R1C2, #R1C3, #R2C1, #R2C2, #R2C3, #R3C1, #R3C2, #R3C3").off();
 
 	    // diagonally X right to left
 	  } else if ($("#R1C3").text() === "O" && $("#R1C3").text() === $("#R2C2").text() && $("#R1C3").text() === $("#R3C1").text()) {
 	    $("#message").text("O wins!");
-	    $("#reset").show();
+	    $("#play").show();
 	    $("#R1C1, #R1C2, #R1C3, #R2C1, #R2C2, #R2C3, #R3C1, #R3C2, #R3C3").off();
 	  }
 	};
@@ -971,7 +968,7 @@ webpackJsonp([0],[
 
 	    if (counter === 9) {
 	      $("#message").text("Let's call it a draw!");
-	      $("#reset").show();
+	      $("#play").show();
 
 	      counter = 0;
 	      return counter;
@@ -1190,12 +1187,11 @@ webpackJsonp([0],[
 
 	$(document).ready(game());
 
-	$("#reset").click(function () {
+	$("#play").click(function () {
 
 	  $("#R1C1, #R1C2, #R1C3, #R2C1, #R2C2, #R2C3, #R3C1, #R3C2, #R3C3").empty();
 	  $("#message").empty();
 	  game();
-	  $("#reset").hide();
 	});
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
