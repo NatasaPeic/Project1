@@ -110,10 +110,12 @@ a:active {
 }
 
 
-body{
-  background-image: url("http://i.imgur.com/XLHdUex.png");
-  background-repeat: no-repeat;
-  background-position: center;
+
+body {
+  background: url("http://i.imgur.com/XLHdUex.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
 }
 
