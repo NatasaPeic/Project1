@@ -145,17 +145,14 @@ const addHandlers = () => {
     });
 
 
-  // create new game
+
+
+// create new game
   $('#play').on('click', onCreateGame);
   $('#play').on('click', function(){
     $(".board").show();
+    $('.X, .O').hide();
     $("#play, #button_1").hide();
-
-  });
-
-  $("#reset").on('click', function(){
-    $(".board").hide();
-    $("#play").show();
   });
 
 };

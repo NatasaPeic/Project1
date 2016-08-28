@@ -29,7 +29,7 @@ const signInSuccess = (data) => {
   app.user = data.user;
   console.log(data);
   console.log(data.user);
-    $("p, .board, #button_1").hide();
+    $("p, .board, .playNow").hide();
     $("#play").show();
 
 

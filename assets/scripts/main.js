@@ -13,7 +13,7 @@ const ui = require ('./auth/ui');
               $("#R" + i + "C1").text() === $("#R" + i + "C3").text()){
 
                 $("#message").text("X wins!");
-                $("#reset").show();
+                $("#play").show();
                 $("#R1C1, #R1C2, #R1C3, #R2C1, #R2C2, #R2C3, #R3C1, #R3C2, #R3C3").off();
 
               // horizontally O
@@ -22,7 +22,7 @@ const ui = require ('./auth/ui');
 
 
                 $("#message").text("O wins!");
-                $("#reset").show();
+                $("#play").show();
                 $("#R1C1, #R1C2, #R1C3, #R2C1, #R2C2, #R2C3, #R3C1, #R3C2, #R3C3").off();
 
 
@@ -31,7 +31,7 @@ const ui = require ('./auth/ui');
               $("#R1" + "C" + i).text() === $("#R3" + "C" + i).text()) {
 
                   $("#message").text("X wins!");
-                  $("#reset").show();
+                  $("#play").show();
                   $("#R1C1, #R1C2, #R1C3, #R2C1, #R2C2, #R2C3, #R3C1, #R3C2, #R3C3").off();
 
 
@@ -40,7 +40,7 @@ const ui = require ('./auth/ui');
 
                   // console.log("O won!");
                   $("#message").text("O wins!");
-                  $("#reset").show();
+                  $("#play").show();
                   $("#R1C1, #R1C2, #R1C3, #R2C1, #R2C2, #R2C3, #R3C1, #R3C2, #R3C3").off();
 
               }
@@ -51,7 +51,7 @@ const ui = require ('./auth/ui');
             if($("#R1C1").text() === "X" &&  $("#R1C1").text() === $("#R2C2").text() && $("#R1C1").text() === $("#R3C3").text()){
 
                 $("#message").text("X wins!");
-                $("#reset").show();
+                $("#play").show();
                 $("#R1C1, #R1C2, #R1C3, #R2C1, #R2C2, #R2C3, #R3C1, #R3C2, #R3C3").off();
 
 
@@ -59,7 +59,7 @@ const ui = require ('./auth/ui');
             } else if ($("#R1C1").text() === "O" &&  $("#R1C1").text() === $("#R2C2").text() && $("#R1C1").text() === $("#R3C3").text()) {
 
               $("#message").text("O wins!");
-              $("#reset").show();
+              $("#play").show();
               $("#R1C1, #R1C2, #R1C3, #R2C1, #R2C2, #R2C3, #R3C1, #R3C2, #R3C3").off();
             }
 
@@ -68,14 +68,14 @@ const ui = require ('./auth/ui');
             if($("#R1C3").text() === "X" &&  $("#R1C3").text() === $("#R2C2").text() && $("#R1C3").text() === $("#R3C1").text()){
 
                 $("#message").text("X wins!");
-                $("#reset").show();
+                $("#play").show();
                 $("#R1C1, #R1C2, #R1C3, #R2C1, #R2C2, #R2C3, #R3C1, #R3C2, #R3C3").off();
 
 
             // diagonally X right to left
             } else if ($("#R1C3").text() === "O" &&  $("#R1C3").text() === $("#R2C2").text() && $("#R1C3").text() === $("#R3C1").text()) {
               $("#message").text("O wins!");
-              $("#reset").show();
+              $("#play").show();
              $("#R1C1, #R1C2, #R1C3, #R2C1, #R2C2, #R2C3, #R3C1, #R3C2, #R3C3").off();
             }
           };
@@ -88,7 +88,7 @@ const ui = require ('./auth/ui');
 
                    if(counter === 9 ){
                       $("#message").text("Let's call it a draw!");
-                      $("#reset").show();
+                      $("#play").show();
 
                       counter = 0;
                       return counter;
@@ -334,11 +334,11 @@ let gameBoard = ["", "", "", "", "", "", "", "", ""];
 $(document).ready(game());
 
 
-$("#reset").click(function () {
+$("#play").click(function () {
 
         $("#R1C1, #R1C2, #R1C3, #R2C1, #R2C2, #R2C3, #R3C1, #R3C2, #R3C3").empty();
         $("#message").empty();
         game();
-        $("#reset").hide();
+      
 
   });
